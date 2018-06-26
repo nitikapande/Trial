@@ -4,8 +4,7 @@ language:
 os:
   - linux  
 
-install:
-    - nuget restore SampleCode.sln
+install:    
     - sudo apt-get install nunit-console
     
 script:
