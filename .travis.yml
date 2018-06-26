@@ -2,9 +2,7 @@ language:
     csharp
 
 os:
-  - linux
-  - osx
-  
+  - linux  
 
 install:
     - nuget restore SampleCode.sln
