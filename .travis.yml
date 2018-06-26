@@ -3,9 +3,6 @@ language:
 
 os:
   - linux  
-
-install:    
-    - sudo apt-get install nunit-console
     
 script:
     - xbuild ./SampleCode.csproj 
