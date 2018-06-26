@@ -3,8 +3,12 @@ language:
 
 os:
   - linux  
+
+install:
+    - nuget restore SampleCode.sln
+    - sudo apt-get install nunit-console
     
 script:
-    - msbuild SampleCode/SampleCode/SampleCode.csproj 
-    - msbuild SampleCode/SampleCodeTest/SampleCodeTest/SampleCodeTest.csproj 
-    
+    - xbuild ./SampleCode.csproj 
+    - xbuild ./SampleCodeTest/SampleCodeTest.csproj 
+    - nunit-console ./SampleCodeTest/SampleCodeTest.csproj
