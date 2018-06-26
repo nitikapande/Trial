@@ -5,6 +5,6 @@ os:
   - linux  
     
 script:
-    - xbuild ./SampleCode.csproj 
-    - xbuild ./SampleCodeTest/SampleCodeTest.csproj 
-    - nunit-console ./SampleCodeTest/SampleCodeTest.csproj
+    - msbuild ./SampleCode.csproj 
+    - msbuild ./SampleCodeTest/SampleCodeTest.csproj 
+    
