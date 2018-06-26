@@ -5,6 +5,6 @@ os:
   - linux  
     
 script:
-    - msbuild ./SampleCode.csproj 
-    - msbuild ./SampleCodeTest/SampleCodeTest.csproj 
+    - msbuild ././SampleCode.csproj 
+    - msbuild ././SampleCodeTest/SampleCodeTest.csproj 
     
