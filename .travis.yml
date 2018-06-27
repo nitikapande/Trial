@@ -12,7 +12,7 @@ before_script:
     - git submodule update --remote --recursive
   
 script:
-    - xbuild ./Authorize.NET/AuthorizeNET.csproj
+    - xbuild ./AuthorizeNET/AuthorizeNET.csproj
     - xbuild ./AuthorizeNETtest/AuthorizeNETtest.csproj
 #   make mono happy by copying the config file with project name
     - cp AuthorizeNETtest/App.config AuthorizeNETtest/AuthorizeNETtest.config
