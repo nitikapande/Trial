@@ -8,9 +8,8 @@ os:
 
 install:
     - dotnet restore
-    # - nuget restore SampleCode.sln
     - sudo apt-get install nunit-console
-    
+
 script:
     - xbuild ./SampleCode.csproj 
     - xbuild ./SampleCodeTest.csproj 
