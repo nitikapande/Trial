@@ -20,7 +20,9 @@ script:
 #   make mono happy by copying the config file with project name
      # - cp AuthorizeNETtest/App.config AuthorizeNETtest/AuthorizeNETtest.config
      # - nunit-console ./AuthorizeNETtest/AuthorizeNETtest.csproj -run=AuthorizeNet.Api.Controllers.MockTest -exclude Integration,NotWorkingOnMono
-
+    - ls ./AuthorizeNET/AuthorizeNET/bin
+    - ls ./AuthorizeNET/AuthorizeNET/bin/Debug
+    - ls ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1
     - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNet.dll ./SampleCode/SampleCode/    
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
