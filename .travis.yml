@@ -5,8 +5,8 @@ os:
   - linux
   - osx
 
-install:
-    - sudo apt-get install nunit-console
+# install:
+    # - sudo apt-get install nunit-console
 
 before_script:
     - git submodule update --remote --recursive
@@ -15,10 +15,10 @@ script:
     - xbuild ./AuthorizeNET/AuthorizeNET.csproj
     - xbuild ./AuthorizeNETtest/AuthorizeNETtest.csproj
 #   make mono happy by copying the config file with project name
-    # - cp AuthorizeNETtest/App.config AuthorizeNETtest/AuthorizeNETtest.config
-    # - nunit-console ./AuthorizeNETtest/AuthorizeNETtest.csproj -run=AuthorizeNet.Api.Controllers.MockTest -exclude Integration,NotWorkingOnMono
+     # - cp AuthorizeNETtest/App.config AuthorizeNETtest/AuthorizeNETtest.config
+     # - nunit-console ./AuthorizeNETtest/AuthorizeNETtest.csproj -run=AuthorizeNet.Api.Controllers.MockTest -exclude Integration,NotWorkingOnMono
 
     - cp ./Authorize.NET/bin/Debug/AuthorizeNet.dll ./sample-code-csharp/
     - xbuild ./SampleCode/SampleCode.csproj
     - xbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
-    - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
+    # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
