@@ -9,6 +9,7 @@ os:
     # - sudo apt-get install nunit-console
 
 before_script:
+    - msbuild   :Restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
     - git submodule update --remote --recursive
   
 script:
