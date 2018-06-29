@@ -9,6 +9,7 @@ os:
     # - sudo apt-get install nunit-console
 
 before_script:
+    - msbuild   :Restore TrialCore\Trial\SampleCode
     - git submodule update --remote --recursive
   
 script:
