@@ -23,7 +23,7 @@ script:
     - ls ./AuthorizeNET/AuthorizeNET/bin
     - ls ./AuthorizeNET/AuthorizeNET/bin/Debug
     - ls ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1
-    - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNet.dll ./SampleCode/SampleCode/    
+    - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
