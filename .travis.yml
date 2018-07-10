@@ -6,7 +6,6 @@ os:
   # - osx
 
  install:
-   
     - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner 
 
 before_script:
