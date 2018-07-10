@@ -6,7 +6,7 @@ os:
   # - osx
 
  install:
-    - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner 
+    - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
