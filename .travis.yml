@@ -6,7 +6,8 @@ os:
   - osx
 
 install:
-    - sudo apt-get install nunit-console
+    "nuget restore Test.Automation.sln",
+    "nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion"
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
