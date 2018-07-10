@@ -6,7 +6,7 @@ os:
   - osx
 
 install:
-    - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion
+    - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner -ExcludeVersion
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
@@ -26,4 +26,4 @@ script:
     - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
-    - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeText
+    - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
