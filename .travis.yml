@@ -3,9 +3,10 @@ language:
     
 os:
   - linux
-  # - osx
+  - osx
 
- install:
+install:
+    - nuget restore ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
     - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion
 
 before_script:
