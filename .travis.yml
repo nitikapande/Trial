@@ -5,9 +5,9 @@ os:
   - linux
   - osx
 
-install:
-    - nuget restore ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
-    - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion
+# install:
+    # - nuget restore ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
+    # - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner -ExcludeVersion
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
