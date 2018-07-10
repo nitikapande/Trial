@@ -90,9 +90,9 @@ namespace SampleCodeTest
                         Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
                     }
 
-            }
-
-
+                }
+            
+            
         }
 
         public ANetApiResponse InvokeRunMethod(string className)
