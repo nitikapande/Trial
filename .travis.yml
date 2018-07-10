@@ -3,7 +3,7 @@ language:
     
 os:
   - linux
-  # - osx
+  - osx
 
  install:
     - sudo apt-get install nunit-console
