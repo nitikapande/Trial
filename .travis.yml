@@ -2,9 +2,10 @@ language:
     csharp
     
 os:
-  - linux
+  # - linux
+  - osx
 
- install:
+install:
     - sudo apt-get install nunit-console
 
 before_script:
