@@ -2,8 +2,8 @@ language:
     csharp
     
 os:
-  # - linux
-  - osx
+  - linux
+  # - osx
 
 install:
     - sudo apt-get install nunit-console
