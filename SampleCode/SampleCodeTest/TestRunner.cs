@@ -40,25 +40,25 @@ namespace SampleCodeTest
         [TestMethod]
         public void TestAllSampleCodes()
         {
-            
-                //string fileName = Constants.CONFIG_FILE;
-                //StreamReader reader = File.OpenText(fileName);
-                TestRunner tr = new TestRunner();
+
+            string fileName = Constants.CONFIG_FILE;
+            StreamReader reader = File.OpenText(fileName);
+            TestRunner tr = new TestRunner();
                 var numRetries = 3;
 
                 string line;
-                //while ((line = reader.ReadLine()) != null)
-                //{
-                    //string[] items = line.Split('\t');
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] items = line.Split('\t');
 
-                string apiName = "CreditBankAccount";//items[0];
-                string isDependent = "1";// items[1];
-                string shouldApiRun = "0";// items[2];
+                string apiName = items[0];
+                string isDependent = items[1];
+                string shouldApiRun = items[2];
 
-                    //if (!shouldApiRun.Equals("1"))
-                        //continue;
+                if (!shouldApiRun.Equals("1"))
+                    continue;
 
-                    Console.WriteLine(new String('-', 20));
+                Console.WriteLine(new String('-', 20));
                     Console.WriteLine("Running test case for :: " + apiName);
                     Console.WriteLine(new String('-', 20));
                     ANetApiResponse response = null;
@@ -90,9 +90,9 @@ namespace SampleCodeTest
                         Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
                     }
 
-                //}
-            
-            
+            }
+
+
         }
 
         public ANetApiResponse InvokeRunMethod(string className)
