@@ -3,10 +3,10 @@ language:
     
 os:
   - linux
-  - osx
+  # - osx
 
-install:
-    - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner -ExcludeVersion
+ install:
+    - sudo apt-get install nunit-console
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
