@@ -5,8 +5,9 @@ os:
   - linux
   - osx
 
- install:
-    - dotnet restore
+# install:
+    # - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
+
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
     - nuget restore ./SampleCode/SampleCode/SampleCode.csproj
