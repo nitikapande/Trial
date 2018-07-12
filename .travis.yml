@@ -27,4 +27,4 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
-    - nunit-console./SampleCode/SampleCodeTest/bin/Debug/SampleCodeTest.dll/SampleCode/SampleCode/
+    - nunit-console ./SampleCode/SampleCodeTest/bin/Debug/SampleCodeTest.dll
