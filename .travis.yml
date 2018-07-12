@@ -5,6 +5,7 @@ os:
   - linux
   - osx
 
+  
 install:
     - dotnet restore
 
@@ -27,5 +28,5 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     - dotnet build
-    - dotnet test ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
+    - dotnet test 
     
