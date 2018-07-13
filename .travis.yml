@@ -1,15 +1,15 @@
 language:
     csharp
-mono:
-    none
+# mono:
+    # none
 dotnet:
     1.0.1
 os:
     - linux
     - osx
 
-install:
-    - dotnet-restore
+# install:
+    # - dotnet-restore
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
     - nuget restore ./SampleCode/SampleCode/SampleCode.csproj
