@@ -25,4 +25,4 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
-    - mono ./testrunner/xunit.runners.2.3.1/tools/xunit.console.clr4.exe ./SampleCode/SampleCodeTest/bin/Debug/netcoreapp1.1/SampleCodeTest.dll
+    - xunit.console ./SampleCode/SampleCodeTest/bin/Debug/netcoreapp1.1/SampleCodeTest.dll
