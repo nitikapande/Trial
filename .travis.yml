@@ -1,9 +1,22 @@
 language:
     csharp
+matrix:
+  include:
+    - os: linux # Ubuntu 14.04
+      dist: trusty
+      sudo: required
+      dotnet: 1.0.0-preview2-003121
+    - os: osx # OSX 10.11
+      osx_image: xcode7.2
+      dotnet: 1.0.0-preview2-003121
+    - os: osx # OSX 10.12
+      osx_image: xcode7.3
+      dotnet: 1.0.0-rc4-0044771
+
     
-os:
-    - linux
-    - osx
+# os:
+    # - linux
+    # - osx
 # install:
     # - nuget install xunit.runners.console -Version 2.0.0 -OutputDirectory testrunner
 before_script:
@@ -25,4 +38,4 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
-    - xunit.console ./SampleCode/SampleCodeTest/bin/Debug/netcoreapp1.1/SampleCodeTest.dll
+    - dotnet test  ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
