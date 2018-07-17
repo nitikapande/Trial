@@ -1,6 +1,6 @@
 language:
     csharp
- mono:
+mono:
     none
 dotnet:
     1.1.0    
