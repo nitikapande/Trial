@@ -5,8 +5,8 @@ os:
   - linux
   - osx
 
-install:
-    - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+ install:
+    # - sudo apt-get install nunit-console
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
@@ -26,6 +26,4 @@ script:
     - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
-    - xbuild /p:Configuration=Release ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
-    - mono ./packages/xunit.runners.*/tools/xunit.console.clr4.exe ./SampleCode/SampleCodeTest/SampleCodeTest.csproj /bin/Release/./SampleCode/SampleCodeTest/SampleCodeTest.csproj SampleCodeTest.dll
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
