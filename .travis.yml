@@ -9,7 +9,6 @@ os:
   - osx
 
 install:
-    # 
     - dotnet restore
 
 before_script:
