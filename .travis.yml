@@ -1,13 +1,14 @@
 language:
     csharp
     
-os:
-  - linux
-  
-dist: 
-    trusty
-mono: 
-    none
+matrix:
+  include:
+    - os: linux # Ubuntu 14.04
+      dist: trusty
+      sudo: required
+      dotnet: 1.0.0-preview2-003121
+    - os: osx 
+      dotnet: 1.0.0-preview2-003121
 install:
     - dotnet restore
 before_script:
@@ -28,4 +29,4 @@ script:
     - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
-    - dotnet test Core.Shogi.Tests/Core.Shogi.Tests.csproj ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
+    - dotnet run ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
