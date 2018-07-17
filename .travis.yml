@@ -27,5 +27,5 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     - xbuild /p:Configuration=Release ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
-    - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./SampleCode/SampleCodeTest/SampleCodeTest.csproj.Tests/bin/Release/SampleCodeTest.Tests.dll
+    - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./SampleCode/SampleCodeTest/SampleCodeTest.csproj/bin/Release/SampleCodeTest.dll
     # - nunit-console ./SampleCode/SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
