@@ -5,6 +5,8 @@ dotnet:
 os:
   - linux
   - osx
+sudo:
+  - required
 
 install:
     - dotnet restore
