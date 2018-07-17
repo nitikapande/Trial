@@ -5,8 +5,8 @@ os:
   - linux
   # - osx
 
-install:
-    - sudo apt-get install nunit-console
+# install:
+    # - sudo apt-get install nunit-console
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
