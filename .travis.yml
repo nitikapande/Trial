@@ -4,10 +4,15 @@ language:
 os:
   - linux
   - osx
-mono: none
+dist: trusty
+mono: latest
 dotnet: 1.1.0
 install:
-    - dotnet restore
+    - REPO_COMMIT_AUTHOR=$(git show -s --pretty=format:"%cn") 
+    - REPO_COMMIT_AUTHOR_EMAIL=$(git show -s --pretty=format:"%ce") 
+    - REPO_COMMIT_MESSAGE=$(git show -s --pretty=format:"%s") 
+    - dotnet restore 
+
 
 before_script:
     - nuget restore ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
