@@ -8,9 +8,6 @@ dist: trusty
 mono: latest
 dotnet: 1.1
 install:
-    - REPO_COMMIT_AUTHOR=$(git show -s --pretty=format:"%cn") 
-    - REPO_COMMIT_AUTHOR_EMAIL=$(git show -s --pretty=format:"%ce") 
-    - REPO_COMMIT_MESSAGE=$(git show -s --pretty=format:"%s") 
     - dotnet restore 
 
 
@@ -22,16 +19,11 @@ before_script:
   
 script:
     - dotnet build
-    # - msbuild ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
+    - msbuild ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
     
-#   make mono happy by copying the config file with project name
-     # - cp AuthorizeNETtest/App.config AuthorizeNETtest/AuthorizeNETtest.config
-     # - nunit-console ./AuthorizeNETtest/AuthorizeNETtest.csproj -run=AuthorizeNet.Api.Controllers.MockTest -exclude Integration,NotWorkingOnMono
-    # - ls ./AuthorizeNET/AuthorizeNET/bin
-    # - ls ./AuthorizeNET/AuthorizeNET/bin/Debug
-    # - ls ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1
-    # - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
-    # - msbuild ./SampleCode/SampleCode/SampleCode.csproj
-    # - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
+
+    - cp ./AuthorizeNET/AuthorizeNET/bin/Debug/netcoreapp1.1/AuthorizeNET.dll ./SampleCode/SampleCode/    
+    - msbuild ./SampleCode/SampleCode/SampleCode.csproj
+    - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     
     - dotnet test ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
