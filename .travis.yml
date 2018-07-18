@@ -6,7 +6,7 @@ os:
   - osx
 dist: trusty
 mono: latest
-dotnet: 1.1.0 -allowUntrusted
+dotnet: 1.1
 install:
     - REPO_COMMIT_AUTHOR=$(git show -s --pretty=format:"%cn") 
     - REPO_COMMIT_AUTHOR_EMAIL=$(git show -s --pretty=format:"%ce") 
