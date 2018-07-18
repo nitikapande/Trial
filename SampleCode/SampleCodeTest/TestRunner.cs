@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Xunit;
 using AuthorizeNET.Api.Contracts.V1;
 using net.authorize.sample;
 using System.IO;
