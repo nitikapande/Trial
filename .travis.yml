@@ -7,8 +7,8 @@ os:
 sudo:
     required
 dist: trusty
-install:
-    - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+ # install:
+    # - sudo apt-get install nunit-console
 mono: latest
 env:
    - DOTNET_CLI_TELEMETRY_OPTOUT=true
@@ -32,4 +32,4 @@ script:
     - msbuild ./SampleCode/SampleCode/SampleCode.csproj
     - msbuild ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
     
-    - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./SampleCode/SampleCodeTest/bin/Debug/netcoreapp1.1/SampleCodeTest.dll
+    - mono ./SampleCode/SampleCodeTest/bin/Debug/netcoreapp1.1/SampleCodeTest.dll
