@@ -5,8 +5,8 @@ dotnet: 1.1.0
 install:
     - dotnet restore
 script:
-- dotnet build
-- dotnet test ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
+    - dotnet build
+    - dotnet test ./SampleCode/SampleCodeTest/SampleCodeTest.csproj 
 
 # language:
     # csharp
