@@ -1,1 +1,9 @@
-GetSettledBatchList  0  1
+DeleteCustomerPaymentProfile	1	1
+CreateCustomerShippingAddress	1	1
+GetBatchStatistics	0	1
+GetSettledBatchList	0	1
+UpdateSplitTenderGroup	0	1
+DeleteCustomerShippingAddress	1	1
+CreateCustomerProfileFromTransaction	1	0
+GetTransactionDetails	1	1
+GetAccountUpdaterJobSummary	0	0
