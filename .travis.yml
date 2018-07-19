@@ -2,7 +2,7 @@ language:
     csharp
 dist: trusty 
 mono: latest 
-dotnet: 2.0.0 
+dotnet: 1.1.0 
 
 install:
     - dotnet restore
@@ -15,7 +15,7 @@ before_script:
   
 script:
     - dotnet build 
-    - dotnet test Core.Shogi.Tests/Core.Shogi.Tests.csproj 
+    - dotnet test ./SampleCode/SampleCodeTest/SampleCodeTest.csproj
 
     # - msbuild ./AuthorizeNET/AuthorizeNET/AuthorizeNET.csproj
     
