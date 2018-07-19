@@ -8,12 +8,12 @@ os:
   - linux
   - osx
 
-install:
-    - cd AuthorizeNET
-    - dotnet restore
-    - cd ../SampleCode
-    - dotnet restore
-    - cd ..
+# install:
+    # - cd AuthorizeNET
+    # - dotnet restore
+    # - cd ../SampleCode
+    # - dotnet restore
+    # - cd ..
 
 before_script:
     - git submodule update --remote --recursive
