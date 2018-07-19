@@ -1,4 +1,4 @@
-CancelSubscription	1	1
+CancelSubscription	1	1Get
 GetSubscriptionStatus	1	1
 GetSubscription	1	1
 UpdateSubscription	1	1
@@ -28,7 +28,7 @@ GetAcceptCustomerProfilePage	1	1
 GetCustomerPaymentProfile	1	1
 DeleteCustomerProfile	1	1
 DeleteCustomerPaymentProfile	1	1
-CreateCustomerShippingAddress	1	1
+
 CreateAnApplePayTransaction     1   0
 CreateAnAndroidPayTransaction   1   0
 CreateAnAcceptTransaction       1   0
