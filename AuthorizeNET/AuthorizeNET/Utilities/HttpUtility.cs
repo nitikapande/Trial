@@ -7,7 +7,6 @@
     using Microsoft.Extensions.Logging;
     using System.Net.Http;
     using System.Threading;
-    using System.Net;
 
     public static class HttpUtility
     {
@@ -45,15 +44,15 @@
             string responseAsString = null;
             using (var clientHandler = new HttpClientHandler())
             {
-                 clientHandler.Proxy = SetProxyIfRequested(clientHandler.Proxy);
+                //TODO: clientHandler.Proxy = SetProxyIfRequested(clientHandler.Proxy);
                 using (var client = new HttpClient(clientHandler))
                 {
                     //set the http connection timeout 
                     var httpConnectionTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpConnectionTimeout);
                     client.Timeout = TimeSpan.FromMilliseconds(httpConnectionTimeout != 0 ? httpConnectionTimeout : Constants.HttpConnectionDefaultTimeout);
 
-                   // set the time out to read/write from stream
-                    var httpReadWriteTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpReadWriteTimeout);
+                    //set the time out to read/write from stream
+                    //var httpReadWriteTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpReadWriteTimeout);
                     //client.ReadWriteTimeout = (httpReadWriteTimeout != 0 ? httpReadWriteTimeout : Constants.HttpReadWriteDefaultTimeout);
 
                     
@@ -90,28 +89,28 @@
 
             return response;
         }
+                
+        //public static IWebProxy SetProxyIfRequested(IWebProxy proxy)
+        //{
+        //    var newProxy = proxy as WebProxy;
 
-        public static IWebProxy SetProxyIfRequested(IWebProxy proxy)
-        {
-            var newProxy = proxy as WebProxy;
+        //    if (UseProxy)
+        //    {
+        //        var proxyUri = new Uri(string.Format("{0}://{1}:{2}", Constants.ProxyProtocol, ProxyHost, ProxyPort));
+        //        if (!_proxySet)
+        //        {
+        //            Logger.info(string.Format("Setting up proxy to URL: '{0}'", proxyUri));
+        //            _proxySet = true;
+        //        }
+        //        if (null == proxy || null == newProxy)
+        //        {
+        //            newProxy = new WebProxy(proxyUri);
+        //        }
 
-            if (UseProxy)
-            {
-                var proxyUri = new Uri(string.Format("{0}://{1}:{2}", Constants.ProxyProtocol, ProxyHost, ProxyPort));
-                if (!_proxySet)
-                {
-                    Logger.LogInformation(string.Format("Setting up proxy to URL: '{0}'", proxyUri));
-                    _proxySet = true;
-                }
-                if (null == proxy || null == newProxy)
-                {
-                    newProxy = new WebProxy(proxyUri);
-                }
-
-                newProxy.UseDefaultCredentials = true;
-                newProxy.BypassProxyOnLocal = true;
-            }
-            return (newProxy ?? proxy);
-        }
+        //        newProxy.UseDefaultCredentials = true;
+        //        newProxy.BypassProxyOnLocal = true;
+        //    }
+        //    return (newProxy ?? proxy);
+        //}
     }
 }
