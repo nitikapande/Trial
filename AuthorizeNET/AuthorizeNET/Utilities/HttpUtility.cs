@@ -6,15 +6,14 @@
     using Api.Controllers.Bases;
     using Microsoft.Extensions.Logging;
     using System.Net.Http;
-    using System.Threading;
 
     public static class HttpUtility
     {
 
         //Max response size allowed: 64 MB
-        private const int MaxResponseLength = 67108864; //104857600;
+        private const int MaxResponseLength = 67108864;
         private static readonly ILogger Logger = LogFactory.getLog(typeof(HttpUtility));
-        private static bool _proxySet;//= false;
+        private static bool _proxySet;// = false;
 
         static readonly bool UseProxy = AuthorizeNET.Environment.getBooleanProperty(Constants.HttpsUseProxy);
         static readonly string ProxyHost = AuthorizeNET.Environment.GetProperty(Constants.HttpsProxyHost);
@@ -55,10 +54,8 @@
                     //var httpReadWriteTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpReadWriteTimeout);
                     //client.ReadWriteTimeout = (httpReadWriteTimeout != 0 ? httpReadWriteTimeout : Constants.HttpReadWriteDefaultTimeout);
 
-                    
-                    var content = new StringContent(XmlUtility.Serialize(request));//, Encoding.UTF8, "text/xml"
-                    Thread.Sleep(5000);
-                    var webResponse =client.PostAsync(postUrl, content).Result;
+                    var content = new StringContent(XmlUtility.Serialize(request), Encoding.UTF8, "text/xml");
+                    var webResponse = client.PostAsync(postUrl, content).Result;
                     Logger.LogDebug("Retrieving Response from Url: '{0}'", postUrl);
                     // Get the response
                     Logger.LogDebug("Received Response: '{0}'", webResponse);
@@ -89,7 +86,7 @@
 
             return response;
         }
-                
+
         //public static IWebProxy SetProxyIfRequested(IWebProxy proxy)
         //{
         //    var newProxy = proxy as WebProxy;
